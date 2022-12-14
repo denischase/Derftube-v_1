@@ -6,6 +6,11 @@ include 'sidebar.php';
 
 ?>
 
+<div class="content">
+    <!-- <div class="container"> -->
+    <div class="row">
+
+
 <?php 
 if (isset($_POST['submit'])){
     $input = $_POST['search'];
@@ -18,8 +23,23 @@ if (isset($_POST['submit'])){
    
         while($row = mysqli_fetch_assoc($run)){
             ?>
-
-                <?php echo$row['mv_name']; ?>
+<div class="col">
+       <div class="card" style="width: 18rem;text-align:center;">
+  <img class="card-img-top" height="300px" width="100px" src="thumb/<?php echo$row['img'];?>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo$row['mv_name']; ?></h5>
+    <p class="card-text"><?php echo$row['director']."<br>".$row['date'];?></p>
+    <?php 
+    
+    $id = $row['id'];
+    $cal = (($id*123456789*54321)/956783);
+    $url = "download.php?id=".urldecode(base64_encode($cal));
+    
+    ?>
+    <a href="<?php echo $url; ?>" class="btn btn" style="background-color:#726297; color:#fff;">Download</a>
+  </div>
+</div>
+       </div>
                
 
             <?php
@@ -29,6 +49,9 @@ if (isset($_POST['submit'])){
 }else{
     echo"<div style='text-align:center;'><h1>No Movie Searched</h1> <p>(Please Search Some Keyword)</p></div>";    
 }
+?>
+
+<?php
 // category
 if (isset($_POST['submit'])){
     $input1 = $_POST['search'];
@@ -44,7 +67,22 @@ $query1 = "SELECT * FROM category where category_name LIKE '%$search1%'";
         while($row1 = mysqli_fetch_assoc($run1)){
             ?>
 
-                <?php echo$row1['category_name']; ?>
+<div class="card" style="width: 18rem; margin-top:20px; text-align:center; border:none;">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo$row1['category_name'];?></h5>
+    <?php 
+    
+    $id = $row1['id'];
+    $cal = (($id*123456789*54321)/956783);
+    $url = "catbypost.php?id=".urldecode(base64_encode($cal));
+
+    ?>
+    
+    
+    <a href="<?php echo$url; ?>" class="card-link">View List</a>
+    
+  </div>
+</div>
                
 
             <?php
@@ -63,8 +101,19 @@ if($count2>0){
     while($row2 = mysqli_fetch_assoc($run2)){
         ?>
 
-            <?php echo$row2['genre_name']; ?>
-           
+<div class="card" style="width: 18rem; margin-top:20px; text-align:center; border:none;">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo$row2['genre_name'];?></h5>
+   <?php 
+   
+   $id2 = $row2['id'];
+    $cal1 = (($id2*123456789*54321)/956783);
+    $url2 = "genbypost.php?id=".urldecode(base64_encode($cal1));
+   ?>
+    <a href="<?php echo$url2?>" class="card-link">View List</a>
+    
+  </div>
+</div>
 
         <?php
     }
@@ -75,3 +124,5 @@ else{
 }
 
 ?>
+</div>
+</div>
