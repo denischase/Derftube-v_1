@@ -44,6 +44,11 @@ $run = mysqli_query($con,$query);
 if($run){
      while($row = mysqli_fetch_assoc($run)){
         ?>
+        <title><?php echo$row['mv_name'];?></title>
+          <meta charset="UTF-8">
+  <meta name="description" content="<?php echo$row['meta_description']; ?>">
+  <meta name="keywords" content="<?php echo$row['mv_tag']; ?>">
+  <meta name="author" content="Derfla">
         <div class="container text-center">
             <div class="">
             <h1>Download <b><?php echo$row['mv_name']; ?></h1></b>

@@ -11,6 +11,36 @@ include "../db/db.php"
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="movie website,,
+movie websites,
+free movie website,
+13377x movie website,
+go movie website,
+best movie website,
+movie websites online free,
+free download movie website,
+movie websites like soap2day,
+new movie website download,
+download hollywood movie website,
+hindi movie website,
+online movie website,
+online free movie website,
+movie website api,
+movie website app,
+movie website app download,
+movie website all,
+movie website apk,
+movie website all list,
+movie website anime,
+movie websites at school,
+movie addiction website,
+movie and website,
+all movie website,
+asian movie website,
+anime movie website">
+  <meta name="author" content="Derfla">
+  <link rel="shortcut icon" href="img/fav.png" type="image/png">
   <title>Cross Cinema</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">

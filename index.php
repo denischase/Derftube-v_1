@@ -1,12 +1,12 @@
 <?php
 include 'header.php';
-include 'ft.php';
+
 ?>
 <div class="content">
     <!-- <div class="container"> -->
     <div class="row">
-
-    
+    <meta name="description" content="<?php echo$row['meta_description']; ?>">
+    <title>Cross cinema</title>
 <?php 
 
 $query = "SELECT * FROM movie";
@@ -40,4 +40,4 @@ if($run){
 </div>
 </div>
 <!-- </div> -->
-<?php include 'sidebar.php'; ?>
+<?php include 'sidebar.php'; include 'ft.php';?>
