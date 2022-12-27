@@ -34,9 +34,21 @@ if (isset($_POST['submit'])){
     $id = $row['id'];
     $cal = (($id*123456789*54321)/956783);
     $url = "download.php?id=".urldecode(base64_encode($cal));
+
+    $cal1 = (($id*123456789*54321)/956783);
+    $url1 = "play.php?id=".urldecode(base64_encode($cal1));
     
     ?>
-    <a href="<?php echo $url; ?>" class="btn btn" style="background-color:#726297; color:#fff;">Download</a>
+    
+    <div class="row">
+      <div class="col-7">
+      <a href="<?php echo $url; ?>" class="btn btn" style="background-color:#726297; color:#fff;">Download</a>
+      </div>
+      <div class="col-3">
+      <a href="<?php echo $url1; ?>"class="btn btn" style="background-color:#726297; color:#fff;">Play</a>
+      </div>
+    
+    </div>
   </div>
 </div>
        </div>

@@ -19,7 +19,13 @@ include 'ft.php';
             ?>
             <ul>
               <li>
-                <a class="nav-link" id="a" href="#"><?php echo$row0['mv_name'];?></a>
+                <?php
+                $id = $row0['id'];
+                $cal1 = (($id*123456789*54321)/956783);
+                 $url1 = "play.php?id=".urldecode(base64_encode($cal1));
+                ?>
+                <a class="nav-link" id="a" href="<?php echo $url1; ?>"><?php echo$row0['mv_name'];?></a>
+                
               </li>
             </ul>
             <?php
